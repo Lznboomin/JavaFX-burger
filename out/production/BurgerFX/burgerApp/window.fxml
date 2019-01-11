@@ -1,0 +1,105 @@
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Button?>
+<BorderPane fx:controller="burgerApp.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <Label maxWidth="Infinity" alignment="TOP_CENTER"
+               style="-fx-border-color: #C8C8C8;
+               -fx-border-width: 0 0 1 0;
+               -fx-border-style: solid">
+            <text>Burgeri tellimine</text>
+            <font>
+                <Font name="Arial" size="20">
+                </Font>
+            </font>
+            <padding>
+                <Insets top="20" left="20" bottom="20" right="20"></Insets>
+            </padding>
+        </Label>
+    </top>
+
+
+
+
+
+
+
+
+
+
+    <center>
+        <GridPane>
+            <Label text="Vali burgeri tüüp" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <VBox GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <fx:define>
+                    <ToggleGroup fx:id="burgerToggleGroup"/>
+                </fx:define>
+                <RadioButton text="Tavaline burger" toggleGroup="$burgerToggleGroup" userData="TavalineBurger"/>
+                <Text text="Sisesta igasse välja soovitud lisand, nt muna, tomat, kurk, baklazaan"/>
+                <TextField fx:id="extra1"/>
+                <TextField fx:id="extra2"/>
+                <TextField fx:id="extra3"/>
+                <TextField fx:id="extra4"/>
+
+                <RadioButton text="Tervislik burger" toggleGroup="$burgerToggleGroup" userData="TervislikBurger"/>
+                <Text text="Sisesta igasse välja soovitud lisand, nt muna, tomat, kurk, majonees, sibul, salat"/>
+                <TextField fx:id="healthyExtra1"/>
+                <TextField fx:id="healthyExtra2"/>
+                <TextField fx:id="healthyExtra3"/>
+                <TextField fx:id="healthyExtra4"/>
+                <TextField fx:id="healthyExtra5"/>
+                <TextField fx:id="healthyExtra6"/>
+
+                <RadioButton text="Lux burgeri eine koos friikartulite ja joogiga" toggleGroup="$burgerToggleGroup" userData="LuxBurger"/>
+
+                <RadioButton selected="true"/>
+                <Button text="Esita tellimus" onAction="#sendOrder"/>
+            </VBox>
+        </GridPane>
+    </center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <bottom>
+        <Label maxWidth="Infinity" alignment="BOTTOM_CENTER"
+               style="-fx-border-color: #C8C8C8;
+               -fx-border-width: 1 0 0 0;
+               -fx-border-style: solid">
+            <text>Copyright claudeBooming Co.</text>
+            <padding>
+                <Insets top="20" left="20" bottom="20" right="20"></Insets>
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>
